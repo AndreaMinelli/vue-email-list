@@ -13,15 +13,19 @@ const app = Vue.createApp({
   data() {
     return {
       mailList: [],
+      mailApi: "https://flynn.boolean.careers/exercises/api/random/mail",
     };
+  },
+  computed: {
+    loading() {
+      return this.mailList.length === 10;
+    },
   },
   methods: {
     getMail() {
-      axios
-        .get("https://flynn.boolean.careers/exercises/api/random/mail")
-        .then((response) => {
-          this.mailList.push(response.data.response);
-        });
+      axios.get(this.mailApi).then((response) => {
+        this.mailList.push(response.data.response);
+      });
     },
   },
   created() {

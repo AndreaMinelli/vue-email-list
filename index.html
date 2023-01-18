@@ -23,7 +23,7 @@
   </head>
   <body>
     <div id="root" class="p-3">
-      <ul class="list-unstyled">
+      <ul v-if="loading" class="list-unstyled">
         <li v-for="mail in mailList">{{ mail }}</li>
       </ul>
     </div>
