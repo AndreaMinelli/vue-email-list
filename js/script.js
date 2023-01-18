@@ -25,7 +25,9 @@ const app = Vue.createApp({
     },
   },
   created() {
-    this.getMail();
+    for (i = 0; i < 10; i++) {
+      this.getMail();
+    }
   },
 });
 
