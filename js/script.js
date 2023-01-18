@@ -18,7 +18,7 @@ const app = Vue.createApp({
   },
   computed: {
     loading() {
-      return this.mailList.length === 10;
+      return this.mailList.length !== 10;
     },
   },
   methods: {
